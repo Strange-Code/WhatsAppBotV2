@@ -7,7 +7,7 @@
  1. Instalar selenium, si ejecutas el siguiente comando en la consola de tu sistema operativo se descargara automaticamente:
     >   pip install selenium
 
- 1. Instalar el webDriver que corresponda a su browser preferido
+ 1. Descargar el webDriver que corresponda a su browser preferido
     >  Web Drivers
 
     Chrome:

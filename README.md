@@ -9,14 +9,18 @@
 
  1. Instalar el webDriver que corresponda a su browser preferido
     >  Web Drivers
-Chrome:
-https://sites.google.com/a/chromium.org/chromedriver/downloads
-Edge:
-https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-Mozzilla:
-https://github.com/mozilla/geckodriver/releases
-Safari:
-https://webkit.org/blog/6900/webdriver-support-in-safari-10/
+
+    Chrome:
+     https://sites.google.com/a/chromium.org/chromedriver/downloads
+	 
+    Edge:
+    https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+	
+   Mozzilla:
+    https://github.com/mozilla/geckodriver/releases
+	
+   Safari:
+   https://webkit.org/blog/6900/webdriver-support-in-safari-10/
 
 
 ## StrageCode.md

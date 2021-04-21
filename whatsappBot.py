@@ -1,7 +1,7 @@
 from selenium import webdriver
 import time
 
-browser = webdriver.Edge(executable_path='./driver/msedgedriver')
+browser = webdriver.Edge(executable_path='./driver/edgedriver')
 
 def seleccionarChat(nombre : str):
     buscando = True
@@ -40,7 +40,7 @@ def leerArchivo(ruta:str):
 def validaQR():
     try:
         browser.find_element_by_tag_name("canvas")
-    except:
+    except Browser:
         return False
     return True
 

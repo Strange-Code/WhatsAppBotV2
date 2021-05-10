@@ -1,4 +1,4 @@
-## MESSAGE BOT :alien:
+## MESSAGE BOT 🤖
 
 - **WhatsappBot**
 

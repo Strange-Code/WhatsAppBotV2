@@ -133,8 +133,6 @@ def whatsapp_boot_init():
         message = identificar_mensaje()
 
         if message == None:
-            buscar_chats()
-            sleep(5)
             continue
 
         procesar_mensaje(message)

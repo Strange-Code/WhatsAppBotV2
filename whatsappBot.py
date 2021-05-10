@@ -1,9 +1,9 @@
 from selenium import webdriver
 import time
 
-browser = webdriver.Edge(executable_path='./driver/edgedriver')
+browser = webdriver.Edge(executable_path='./driver/edgedriver90')
 
-def seleccionarChat(nombre : str):
+def seleccionar_chat(nombre : str):
     buscando = True
 
     while buscando:
@@ -21,13 +21,13 @@ def enviar():
     element.click()
     print("MENSAJE ENVIADO")
 
-def enviarMensaje(mensaje: str):
+def enviar_mensaje(mensaje: str):
     chatbox = browser.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')
     chatbox.send_keys(mensaje)
     time.sleep(2)
     enviar()
 
-def leerArchivo(ruta:str):
+def leer_archivo(ruta:str):
     archivo = open(ruta, mode='r', encoding='utf-8')
     chatbox = browser.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')
 
@@ -37,14 +37,14 @@ def leerArchivo(ruta:str):
 
     archivo.close()
 
-def validaQR():
+def valida_qr():
     try:
         browser.find_element_by_tag_name("canvas")
     except Browser:
         return False
     return True
 
-def botWhatsapp():
+def bot_whatsapp():
     browser.get("https://web.whatsapp.com/")
     time.sleep(5)
 
@@ -52,14 +52,14 @@ def botWhatsapp():
 
     while espera:
         print("ESTOY ESPERANDO")
-        espera = validaQR()
+        espera = valida_qr()
         time.sleep(2)
         if espera == False:
             print("SE AUTENTICO")
             break
     
-    seleccionarChat("RPONCE")
+    seleccionar_chat("RPONCE")
     time.sleep(2)
-    leerArchivo('./resource/pruebaBot.txt')
+    leer_archivo('./resource/pruebaBot.txt')
 
-botWhatsapp()
+bot_whatsapp()

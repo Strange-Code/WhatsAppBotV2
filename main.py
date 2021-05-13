@@ -5,7 +5,7 @@ from selenium.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
 import re
 from unicodedata import normalize
 
-filepath = './resource\whatsapp_session.txt'
+filepath = './resource/whatsapp_session.txt'
 driver = webdriver
 
 def crear_driver_session():
@@ -41,7 +41,6 @@ def buscar_chats():
     if len(driver.find_elements_by_class_name("_2zkCi")) == 0:
         print("CHAT ABIERTO")
         message = identificar_mensaje()
-        
         if message != None:
             return True
 
@@ -58,13 +57,14 @@ def buscar_chats():
 
         element_name = chat.find_elements_by_class_name('_3Dr46')
         name = element_name[0].text.upper().strip()
+        name = name.lstrip()
 
         print("IDENTIFICANDO CONTACTO")
         
         with open("./resource/contactos_autorizados.txt", mode='r', encoding='utf-8') as archivo:
             contactos = [linea.rstrip() for linea in archivo]
             if name not in contactos:
-                print("CONTACTO NO AUTORIZADO : ", name)
+                print("CONTACTO NO AUTORIZADO:", name)
                 continue
         
         print(name, "AUTORIZADO PARA SER ATENDIDO POR BOT")
@@ -114,6 +114,24 @@ def preparar_respuesta(message :str):
         text1.close()
     elif message.__contains__("GRACIAS"):
         response = "Ha sido un place ayudarte ;-)  \n"
+    elif message.__contains__("DONDE ESTA EL DINERO"):
+        response = "Ni k Decirte  \n"
+    elif message.__contains__("XD"):
+        response = "xdd \n"
+    elif message.__contains__("HOLA"):
+        response = "Hola, Como estas?  ;-)  \n"
+    elif message.__contains__("PRECIO"):
+        if message.__contains__("CODIGO"): 
+            response = "Es gratis:( \n "
+        elif message.__contains__("CALCETINES"): 
+            response = "VALEN 30 EL PAR (y) \n "
+    elif message.__contains__("COMO ESTAS"):
+        if message.__contains__("MAL"): 
+            response = "Por que estas mal :( \n "
+        elif message.__contains__("BIEN"): 
+            response = "Que me alegro que estes bien :) (Y) \n"
+        else: 
+            response = "Como estas? PUTA (Y) \n"
     else:        
         response = "Hola, soy a Eva un bot creado por StrangeCode, preguntame ¿Qué puedo hacer? :-D \n"
 
